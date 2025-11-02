@@ -1,0 +1,45 @@
+@use '../../styles/setting/var' as *;
+@use '../../styles/helper/mixin';
+
+/**
+ * Login.module.scss
+**/
+
+.authWrap {
+  display: flex;
+  flex-direction: column;
+  width: 42rem;
+  max-width: 80%;
+}
+
+.authTitle {
+  padding: 3rem 0;
+  @include mixin.font($color_white 700 '4.2rem' center);
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem 0;
+  width: 100%;
+  font-size: 1.4rem;
+}
+
+.textError {
+  margin-top: 1rem;
+  @include mixin.font($color_negative_base '1.4rem');
+}
+
+.authCheck {
+  margin-top: 2rem;
+  @include mixin.font($color_white center);
+
+  a {
+    color: $color_main;
+    border-bottom: .1rem solid transparent;
+
+    &:hover {
+      border-color: $color_main;
+    }
+  }
+}

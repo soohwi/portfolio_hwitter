@@ -1,0 +1,61 @@
+@use '../../../styles/setting/var' as *;
+@use '../../../styles/helper/mixin';
+
+/**
+ * Tweet.module.scss
+**/
+
+.tweetWrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 2rem;
+  color: $color_white;
+  border: .1rem solid rgba(255, 255, 255, 0.5);
+  border-radius: 1rem;
+}
+
+.tweet {
+  flex: 1;
+}
+
+.userName {
+  padding-bottom: 1.5rem;
+  @include mixin.font(700 '1.5rem');
+}
+
+.tweetContent {
+  font-size: 1.4rem;
+}
+
+.tweetPhoto {
+  width: 10rem;
+  height: 10rem;
+  border-radius: .4rem;
+
+  img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.tweetBtns {
+  display: flex;
+  gap: 0 .4rem;
+  margin-top: 1.5rem;
+}
+
+.tweetWrite {
+  padding: 1rem;
+  width: 100%;
+  @include mixin.font($color_white '1.4rem');
+  border: .1rem solid $color_white;
+  border-radius: .4rem;
+  background-color: $color_black;
+  resize: none;
+
+  &:focus {
+    outline: none;
+  }
+}

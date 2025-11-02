@@ -1,0 +1,46 @@
+@use '../../../styles/setting/var' as *;
+@use '../../../styles/helper/mixin';
+
+/**
+ * Layout.module.scss
+**/
+
+.layout {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 1.5rem;
+  padding-top: 3rem;
+  width: 100%;
+  max-width: 80%;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+
+  &Item {
+    padding: .5rem;
+    width: 3rem;
+    height: 3rem;
+    border: .1rem solid $color_white;
+    border-radius: 100%;
+    cursor: pointer;
+
+    svg {
+      fill: $color_white;
+    }
+
+    &.typeLogout {
+      border-color: $color_negative_base;
+
+      svg {
+        fill: $color_negative_base;
+      }
+    }
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@use '../../../styles/setting/var' as *;
+@use '../../../styles/helper/mixin';
+
+/**
+ * Modal.module.scss
+**/
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30rem;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 1rem;
+  background-color: $color_white;
+  opacity: 0;
+  @include mixin.transform(translate(-50%, -50%) scale(.7));
+  @include mixin.transition(all $transition-bounce);
+
+  &Box {
+    visibility: hidden;
+    position: fixed;
+    z-index: $zIndex_modal;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+    opacity: 0;
+    @include mixin.transition(all $transition-normal);
+
+    &.open {
+      visibility: visible;
+      background-color: rgba(0,0,0,.6);
+      opacity: 1;
+
+      .modal {
+        @include mixin.transform(translate(-50%, -50%) scale(1));
+        opacity: 1;
+      }
+    }
+  }
+
+  &Inner {
+    padding: 1.5rem 0;
+  }
+
+  &Header {
+    .title {
+      padding: 1.5rem 1rem;
+      @include mixin.font($color_black 600 '1.8rem' center);
+    }
+  }
+
+  &Body {
+    padding: 1rem 2rem;
+  }
+
+  &Footer {
+  }
+}

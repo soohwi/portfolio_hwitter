@@ -1,0 +1,41 @@
+@use '../../../styles/setting/var' as *;
+@use '../../../styles/helper/mixin';
+
+/**
+ * PostTweetForm.module.scss
+**/
+
+.tweetContent {
+  padding: 2rem;
+  width: 100%;
+  @include mixin.font($color_white '1.4rem');
+  border: .1rem solid $color_white;
+  border-radius: 1rem;
+  background-color: $color_black;
+  resize: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.tweetAddPhoto {
+  .btnAdd {
+    display: block;
+    margin-top: 1rem;
+    width: 100%;
+    height: 3.5rem;
+    @include mixin.font($color_main 700 '1.4rem/3.5rem' center);
+    border: .1rem solid $color_main;
+    border-radius: 3.5rem;
+    cursor: pointer;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
+  input {
+    display: none;
+  }
+}

@@ -1,0 +1,41 @@
+@use '../../../styles/setting/var' as *;
+@use '../../../styles/helper/mixin';
+
+/**
+ * GithubBtn.module.scss
+**/
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 1rem;
+  margin-top: 5rem;
+  padding: 0 1rem;
+  height: 3.5rem;
+  color: $color_black;
+  border-radius: 3.5rem;
+  background-color: $color_white;
+
+  &:hover {
+    color: $color_main;
+  }
+
+  &:active {
+    @include mixin.transform(translateY(0));
+  }
+
+  &:focus {
+    outline: .2rem solid $color_main;
+    outline-offset: .2rem;
+  }
+}
+
+.logo {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.text {
+  margin: .1rem 0 -.1rem;
+}

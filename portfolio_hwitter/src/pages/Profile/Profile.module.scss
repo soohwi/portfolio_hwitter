@@ -1,0 +1,51 @@
+@use '../../styles/setting/var' as *;
+@use '../../styles/helper/mixin';
+
+/**
+ * Profile.module.scss
+**/
+
+.profile {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.profileImgWrap {
+  label {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
+    background-color: $color_main;
+    cursor: pointer;
+
+    svg {
+      width: 5rem;
+    }
+  }
+
+  .profileImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  input {
+    display: none;
+  }
+}
+
+.userName {
+  @include mixin.font($color_white '2.2rem');
+}
+
+.userHistory {
+  display: grid;
+  gap: .5rem 0;
+  width: 100%;
+}

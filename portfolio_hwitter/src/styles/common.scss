@@ -1,0 +1,17 @@
+@charset 'utf-8';
+
+/**
+ * common.scss
+**/
+
+// === 파일참조 ===
+// helper
+@use './helper/function' as *;
+@use './helper/mixin' as *;
+
+// setting
+@use './setting/var' as *;
+@use './setting/reset' as *;
+
+// layout
+@use './layout/layout' as *;

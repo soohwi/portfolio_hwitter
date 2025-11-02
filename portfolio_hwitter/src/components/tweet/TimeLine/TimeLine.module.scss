@@ -1,0 +1,13 @@
+@use '../../../styles/setting/var' as *;
+@use '../../../styles/helper/mixin';
+
+/**
+ *
+ TimeLine.module.scss
+**/
+
+.timeline {
+  display: grid;
+  gap: .5rem 0;
+  margin-top: 3rem;
+}
