@@ -100,6 +100,7 @@ function SignUp() {
           value="계정 생성하기"
           loading={formData.loading}
           loadingText="Loading..."
+          aria-label="계정 생성"
         />
       </form>
       {formData.error !== "" ? <p className={styles.textError}>{formData.error}</p> : null}

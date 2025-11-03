@@ -54,7 +54,10 @@ function PostTweetForm() {
 
   return (
     <form onSubmit={onSubmit}>
+      <label htmlFor="tweetContent" className="ir-blind">트윗 내용</label>
       <textarea
+        id="tweetContent"
+        name="tweetContent"
         className={styles.tweetContent}
         placeholder="오늘 어떤 일이 있으셨나요?"
         rows={5}
@@ -65,8 +68,8 @@ function PostTweetForm() {
       ></textarea>
       <div className={styles.tweetAddPhoto}>
         <label
-          className={styles.btnAdd}
           htmlFor="file"
+          className={styles.btnAdd}
         >
           {file ? "Photo Added ✅" : "Add Photo"}
         </label>
@@ -84,6 +87,7 @@ function PostTweetForm() {
         value="Post Tweet"
         loading={loading}
         loadingText="Posting..."
+        aria-label="트위터 올리기"
       />
     </form>
   );

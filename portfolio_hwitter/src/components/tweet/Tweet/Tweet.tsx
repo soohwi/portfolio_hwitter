@@ -63,7 +63,10 @@ function Tweet({userName, fileData, tweet, userId, id}: TweetType) {
         <p className={styles.userName}>{userName}</p>
         {isEditMode ? (
           <form onSubmit={onEditSubmit}>
+            <label htmlFor="tweetContent" className="ir-blind">트윗 내용</label>
             <textarea
+              id="tweetContent"
+              name="tweetContent"
               className={styles.tweetWrite}
               placeholder="오늘 어떤 일이 있으셨나요?"
               value={editTweet}
@@ -75,11 +78,13 @@ function Tweet({userName, fileData, tweet, userId, id}: TweetType) {
                 styleType="primary"
                 size="sm"
                 value="저장"
+                aria-label="편집 저장"
               />
               <Button
                 size="sm"
                 value="취소"
                 onClick={onEditCancel}
+                aria-label="편집 취소"
               />
             </div>
           </form>
@@ -90,19 +95,21 @@ function Tweet({userName, fileData, tweet, userId, id}: TweetType) {
               size="sm"
               value="편집"
               onClick={onEdit}
+              aria-label="편집"
             />
             <Button
               size="sm"
               styleType="negative"
               value="삭제"
               onClick={onDelete}
+              aria-label="삭제"
             />
           </div>
         ) : null}
       </div>
       {fileData ? (
         <div className={styles.tweetPhoto}>
-          <img src={fileData} />
+          <img src={fileData} alt="트윗 업로드 이미지"/>
         </div>
       ) : null}
     </div>

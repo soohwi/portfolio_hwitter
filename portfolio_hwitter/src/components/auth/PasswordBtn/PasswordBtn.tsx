@@ -106,6 +106,7 @@ function PasswordBtn() {
       <Button
         value="취소"
         onClick={closeModal}
+        aria-label="취소"
       />
       <Button
         styleType="primary"
@@ -113,6 +114,7 @@ function PasswordBtn() {
         loading={loading}
         loadingText="발송 중..."
         onClick={handleSend}
+        aria-label="메일 발송"
       />
     </div>
   );

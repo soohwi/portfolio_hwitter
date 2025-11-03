@@ -76,6 +76,7 @@ function Login() {
           value="로그인"
           loading={loading}
           loadingText="Loading..."
+          aria-label="로그인"
         />
       </form>
       {error !== "" ? <p className={styles.textError}>{error}</p> : null}
