@@ -1,9 +1,10 @@
+/**
+ * components/common
+ * Button/Button.module.scss
+**/
+
 @use '../../../styles/setting/var' as *;
 @use '../../../styles/helper/mixin';
-
-/**
- * Button.module.scss
-**/
 
 // 버튼그룹
 .btnWrap {

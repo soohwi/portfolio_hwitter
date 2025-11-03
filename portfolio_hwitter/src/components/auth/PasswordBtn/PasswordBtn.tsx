@@ -1,3 +1,8 @@
+/**
+ * components/auth
+ * PasswordBtn/PasswordBtn.tsx
+**/
+
 import { useEffect, useState } from "react";
 import { auth } from "@/firebase";
 import { sendPasswordResetEmail } from "firebase/auth";

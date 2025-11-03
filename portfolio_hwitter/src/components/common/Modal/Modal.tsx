@@ -1,3 +1,8 @@
+/**
+ * components/common
+ * Modal/Modal.tsx
+**/
+
 import { useEffect } from "react";
 import styles from "./Modal.module.scss";
 

@@ -1,3 +1,8 @@
+/**
+ * components/common
+ * LoadingScreen/LoadingScreen.tsx
+**/
+
 import styles from './LoadingScreen.module.scss';
 
 export default function LoadingScreen() {

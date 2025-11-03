@@ -1,9 +1,10 @@
+/**
+ * components/common
+ * Modal/Modal.module.scss
+**/
+
 @use '../../../styles/setting/var' as *;
 @use '../../../styles/helper/mixin';
-
-/**
- * Modal.module.scss
-**/
 
 .modal {
   position: absolute;

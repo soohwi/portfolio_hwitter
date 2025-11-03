@@ -1,9 +1,10 @@
+/**
+ * components/auth
+ * GithubBtn/GithubBtn.module.scss
+**/
+
 @use '../../../styles/setting/var' as *;
 @use '../../../styles/helper/mixin';
-
-/**
- * GithubBtn.module.scss
-**/
 
 .button {
   display: flex;

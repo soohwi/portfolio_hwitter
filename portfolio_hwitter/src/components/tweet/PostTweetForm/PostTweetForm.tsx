@@ -1,3 +1,8 @@
+/**
+ * components/tweet
+ * PostTweetForm/PostTweetForm.tsx
+**/
+
 import { useState } from "react";
 import { auth, db } from "@/firebase";
 import { addDoc, collection } from "firebase/firestore";

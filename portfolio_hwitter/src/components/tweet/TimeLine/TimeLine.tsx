@@ -1,3 +1,8 @@
+/**
+ * components/tweet
+ * TimeLine/TimeLine.tsx
+**/
+
 import { useEffect, useState } from "react";
 import { db } from "@/firebase";
 import { collection, limit, onSnapshot, orderBy, query } from "firebase/firestore";

@@ -1,5 +1,6 @@
 /**
- * tweet index.ts
+ * components/tweet
+ * index.ts
 **/
 
 export { default as PostTweetForm } from './PostTweetForm/PostTweetForm';

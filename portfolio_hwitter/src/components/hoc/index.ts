@@ -1,5 +1,6 @@
 /**
- * hoc index.ts
+ * components/hoc
+ * index.ts
 **/
 
 export { default as ProtectedRoute } from './ProtectedRoute/ProtectedRoute';

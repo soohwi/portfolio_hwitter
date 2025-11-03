@@ -1,13 +1,14 @@
+/**
+ * styles
+ * layout/_layout.scss
+**/
+
 @charset 'utf-8';
 
 @use 'sass:math';
 // @use '../helper/function' as *;
 @use '../helper/mixin';
 @use '../setting/var' as *;
-
-/**
- * 레이아웃
-**/
 
 // === 전역 기본 스타일 ===
 :root {

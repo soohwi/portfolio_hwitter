@@ -1,9 +1,10 @@
+/**
+ * components/tweet
+ * Tweet/Tweet.module.scss
+**/
+
 @use '../../../styles/setting/var' as *;
 @use '../../../styles/helper/mixin';
-
-/**
- * Tweet.module.scss
-**/
 
 .tweetWrap {
   display: flex;

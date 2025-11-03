@@ -1,9 +1,10 @@
+/**
+ * components/layout
+ * Layout/Layout.module.scss
+**/
+
 @use '../../../styles/setting/var' as *;
 @use '../../../styles/helper/mixin';
-
-/**
- * Layout.module.scss
-**/
 
 .layout {
   display: grid;

@@ -1,9 +1,10 @@
+/**
+ * components/common
+ * LoadingScreen/LoadingScreen.module.scss
+**/
+
 @use '../../../styles/setting/var' as *;
 @use '../../../styles/helper/mixin';
-
-/**
- * LoadingScreen.module.scss
-**/
 
 .loading {
   display: flex;

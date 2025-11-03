@@ -1,9 +1,10 @@
+/**
+ * components/tweet
+ * PostTweetForm/PostTweetForm.module.scss
+**/
+
 @use '../../../styles/setting/var' as *;
 @use '../../../styles/helper/mixin';
-
-/**
- * PostTweetForm.module.scss
-**/
 
 .tweetContent {
   padding: 2rem;

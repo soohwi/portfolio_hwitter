@@ -1,3 +1,8 @@
+/**
+ * components/hoc
+ * ProtectedRoute/ProtectedRoute.tsx
+**/
+
 import { Navigate } from "react-router-dom";
 import { auth } from "@/firebase";
 

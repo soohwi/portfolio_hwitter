@@ -1,14 +1,13 @@
+/**
+ * styles
+ * setting/_reset.scss
+**/
+
 @charset 'utf-8';
 
 @use 'sass:math';
 // @use '../helper/function' as *;
 @use '../helper/mixin';
-
-/**
- * 셋팅
- * reset
-**/
-
 
 * {
 	box-sizing: border-box;

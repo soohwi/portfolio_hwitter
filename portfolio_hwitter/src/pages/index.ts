@@ -1,5 +1,6 @@
 /**
- * pages index.ts
+ * pages
+ * index.ts
 **/
 
 export { default as Home } from './Home/Home';

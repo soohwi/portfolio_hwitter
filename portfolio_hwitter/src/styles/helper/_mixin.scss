@@ -1,3 +1,8 @@
+/**
+ * styles
+ * helper/_mixin.scss
+**/
+
 @charset 'utf-8';
 
 @use 'sass:math';
@@ -5,12 +10,6 @@
 @use 'sass:meta';
 @use 'sass:string';
 @use './function' as *;
-
-/**
- * 헬퍼
- * 믹스인
-**/
-
 
 //< 플렉스
 // 	.foo {

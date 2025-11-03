@@ -1,5 +1,6 @@
 /**
- * common index.ts
+ * components/common
+ * index.ts
 **/
 
 export { default as LoadingScreen } from './LoadingScreen/LoadingScreen';

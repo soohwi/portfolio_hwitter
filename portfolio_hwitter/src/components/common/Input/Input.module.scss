@@ -1,9 +1,11 @@
+/**
+ * components/common
+ * Input/Input.module.scss
+**/
+
 @use '../../../styles/setting/var' as *;
 @use '../../../styles/helper/mixin';
 
-/**
- * Input.module.scss
-**/
 
 .input {
   overflow: hidden;

@@ -1,10 +1,10 @@
+/**
+ * components/tweet
+ * TimeLine/TimeLine.module.scss
+**/
+
 @use '../../../styles/setting/var' as *;
 @use '../../../styles/helper/mixin';
-
-/**
- *
- TimeLine.module.scss
-**/
 
 .timeline {
   display: grid;

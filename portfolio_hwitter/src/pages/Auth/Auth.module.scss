@@ -1,9 +1,10 @@
+/**
+ * pages/Auth
+ * Auth.module.scss
+**/
+
 @use '../../styles/setting/var' as *;
 @use '../../styles/helper/mixin';
-
-/**
- * Login.module.scss
-**/
 
 .authWrap {
   display: flex;

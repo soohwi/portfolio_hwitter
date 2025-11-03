@@ -1,3 +1,8 @@
+/**
+ * components/layout
+ * Layout/Layout.tsx
+**/
+
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { auth } from "@/firebase";
 import styles from "./Layout.module.scss";

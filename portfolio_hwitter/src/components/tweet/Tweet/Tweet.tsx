@@ -1,3 +1,8 @@
+/**
+ * components/tweet
+ * Tweet/Tweet.tsx
+**/
+
 import { useState } from "react";
 import { auth, db } from "@/firebase";
 import { deleteDoc, doc, updateDoc } from "firebase/firestore";

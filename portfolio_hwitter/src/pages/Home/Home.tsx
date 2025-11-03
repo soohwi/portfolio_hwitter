@@ -1,3 +1,8 @@
+/**
+ * pages/Home
+ * Home.tsx
+**/
+
 import { PostTweetForm, TimeLine } from "@/components/tweet";
 import styles from "./Home.module.scss";
 

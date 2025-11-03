@@ -1,9 +1,10 @@
-@use '../../styles/setting/var' as *;
-@use '../../styles/helper/mixin';
-
 /**
+ * pages/Home
  * Home.module.scss
 **/
+
+@use '../../styles/setting/var' as *;
+@use '../../styles/helper/mixin';
 
 .home {
   width: 100%;

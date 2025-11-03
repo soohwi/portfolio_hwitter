@@ -1,3 +1,8 @@
+/**
+ * pages/Profile
+ * Profile.tsx
+**/
+
 import { useEffect, useState } from "react";
 import { auth, db } from "@/firebase";
 import { addDoc, collection, getDocs, limit, orderBy, query, updateDoc, where } from "firebase/firestore";

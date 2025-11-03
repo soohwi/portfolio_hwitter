@@ -1,3 +1,8 @@
+/**
+ * components/auth
+ * GithubBtn/GithubBtn.tsx
+**/
+
 import { useNavigate } from "react-router-dom";
 import { auth } from "@/firebase";
 import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
