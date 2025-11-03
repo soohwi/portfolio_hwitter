@@ -6,11 +6,11 @@
 import { useState } from "react";
 import { auth, db } from "@/firebase";
 import { deleteDoc, doc, updateDoc } from "firebase/firestore";
-import type { ITweet } from "../TimeLine/TimeLine";
-import { Button } from "../../common/Button/Button";
+import type { TweetType } from "@/types/tweet";
+import { Button } from "@/components/common";
 import styles from "./Tweet.module.scss";
 
-export default function Tweet({userName, fileData, tweet, userId, id}: ITweet) {
+function Tweet({userName, fileData, tweet, userId, id}: TweetType) {
   const user = auth.currentUser;
   const [isEditMode, setIsEditMode] = useState(false);
   const [editTweet, setEditTweet] = useState(tweet);
@@ -108,3 +108,5 @@ export default function Tweet({userName, fileData, tweet, userId, id}: ITweet) {
     </div>
   );
 }
+
+export default Tweet;

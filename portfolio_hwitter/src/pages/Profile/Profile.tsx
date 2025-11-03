@@ -8,13 +8,13 @@ import { auth, db } from "@/firebase";
 import { addDoc, collection, getDocs, limit, orderBy, query, updateDoc, where } from "firebase/firestore";
 import { handleFileChange } from "@/util/util";
 import { Tweet } from "@/components/tweet";
-import type { ITweet } from "@/components/tweet/TimeLine/TimeLine";
+import type { TweetType } from "@/types/tweet";
 import styles from "./Profile.module.scss";
 
-export default function Profile() {
+function Profile() {
   const user = auth.currentUser;
   const [avatar, setAvatar] = useState(null);
-  const [tweets, setTweets] = useState<ITweet[]>([]);
+  const [tweets, setTweets] = useState<TweetType[]>([]);
 
   // Firestore에서 사용자 정보 가져오기
   const fetchUserAvatar = async() => {
@@ -123,3 +123,5 @@ export default function Profile() {
     </div>
   );
 }
+
+export default Profile;
