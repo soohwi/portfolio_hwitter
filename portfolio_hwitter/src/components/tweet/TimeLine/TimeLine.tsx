@@ -8,19 +8,11 @@ import { db } from "@/firebase";
 import { collection, limit, onSnapshot, orderBy, query } from "firebase/firestore";
 import type { Unsubscribe } from "firebase/auth";
 import { Tweet } from "@/components/tweet";
+import type { TweetType } from "@/types/tweet";
 import styles from "./TimeLine.module.scss";
 
-export interface ITweet {
-  id: string;
-  fileData?: string;
-  tweet: string;
-  userId: string;
-  userName: string;
-  createdAt: number;
-}
-
-export default function TimeLine() {
-  const [tweets, setTweets] = useState<ITweet[]>([]);
+function TimeLine() {
+  const [tweets, setTweets] = useState<TweetType[]>([]);
 
   useEffect(() => {
     // 유저가 보고있지 않으면 이벤트 리스너를 꺼야함(계속 켜두면 firebase 요금나감)
@@ -63,3 +55,5 @@ export default function TimeLine() {
     </ul>
   );
 }
+
+export default TimeLine;
