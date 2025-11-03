@@ -78,13 +78,13 @@ function Tweet({userName, fileData, tweet, userId, id}: TweetType) {
                 styleType="primary"
                 size="sm"
                 value="저장"
-                aria-label="편집 저장"
+                aria-label="편집 내용 저장"
               />
               <Button
                 size="sm"
                 value="취소"
                 onClick={onEditCancel}
-                aria-label="편집 취소"
+                aria-label="편집 내용 취소"
               />
             </div>
           </form>
@@ -95,14 +95,14 @@ function Tweet({userName, fileData, tweet, userId, id}: TweetType) {
               size="sm"
               value="편집"
               onClick={onEdit}
-              aria-label="편집"
+              aria-label="트윗 편집"
             />
             <Button
               size="sm"
               styleType="negative"
               value="삭제"
               onClick={onDelete}
-              aria-label="삭제"
+              aria-label="트윗 삭제"
             />
           </div>
         ) : null}
