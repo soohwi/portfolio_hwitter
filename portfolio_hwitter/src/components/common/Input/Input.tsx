@@ -17,7 +17,7 @@ interface InputProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const Input: React.FC<InputProps> = ({
+const Input: React.FC<InputProps> = ({
   htmlType = 'text',
   name,
   value,
@@ -41,3 +41,5 @@ export const Input: React.FC<InputProps> = ({
     </div>
   );
 }
+
+export default Input;

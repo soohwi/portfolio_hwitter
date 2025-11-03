@@ -7,7 +7,7 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import { auth } from "@/firebase";
 import styles from "./Layout.module.scss";
 
-export default function Layout() {
+function Layout() {
   const navigate = useNavigate();
   const onLogout = () => {
     const ok = confirm("로그아웃을 하시겠습니까?");
@@ -45,3 +45,5 @@ export default function Layout() {
     </div>
   );
 }
+
+export default Layout;

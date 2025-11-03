@@ -6,7 +6,7 @@
 import { PostTweetForm, TimeLine } from "@/components/tweet";
 import styles from "./Home.module.scss";
 
-export default function Home() {
+function Home() {
   return (
     <div className={styles.home}>
       <PostTweetForm />
@@ -14,3 +14,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Home;

@@ -7,10 +7,10 @@ import { useState } from "react";
 import { auth, db } from "@/firebase";
 import { addDoc, collection } from "firebase/firestore";
 import { handleFileChange } from "@/util/util";
-import { Button } from "@/components/common/Button/Button";
+import { Button } from "@/components/common";
 import styles from "./PostTweetForm.module.scss";
 
-export default function PostTweetForm() {
+function PostTweetForm() {
   const [loading, setLoading] = useState(false);
   const [tweet, setTweet] = useState("");
   const [file, setFile] = useState<File | null>(null);
@@ -88,3 +88,5 @@ export default function PostTweetForm() {
     </form>
   );
 }
+
+export default PostTweetForm;

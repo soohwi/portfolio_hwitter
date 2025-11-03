@@ -9,11 +9,10 @@ import { auth } from "@/firebase";
 import { FirebaseError } from "firebase/app";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { GithubBtn, PasswordBtn } from "@/components/auth";
-import { Input } from "@/components/common/Input/Input";
-import { Button } from "@/components/common/Button/Button";
+import { Button, Input } from "@/components/common";
 import styles from "./Auth.module.scss";
 
-export default function Login() {
+function Login() {
   const navigate = useNavigate();// react hook
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
@@ -86,3 +85,5 @@ export default function Login() {
     </div>
   );
 }
+
+export default Login;

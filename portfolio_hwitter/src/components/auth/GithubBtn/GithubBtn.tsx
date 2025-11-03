@@ -8,7 +8,7 @@ import { auth } from "@/firebase";
 import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import styles from "./GithubBtn.module.scss";
 
-export default function GithubButton() {
+function GithubButton() {
   const navigate = useNavigate();
 
   const signInGithub = async () => {
@@ -28,3 +28,5 @@ export default function GithubButton() {
     </button>
   );
 }
+
+export default GithubButton;

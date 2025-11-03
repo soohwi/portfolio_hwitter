@@ -9,11 +9,10 @@ import { auth } from "@/firebase";
 import { FirebaseError } from "firebase/app";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { GithubBtn, PasswordBtn } from "@/components/auth";
-import { Button } from "@/components/common/Button/Button";
-import { Input } from "@/components/common/Input/Input";
+import { Button, Input } from "@/components/common";
 import styles from "./Auth.module.scss";
 
-export default function SignUp() {
+function SignUp() {
   const navigate = useNavigate();// react hook
   // useState 묶어서 사용
   const [formData, setFormData] = useState({
@@ -110,3 +109,5 @@ export default function SignUp() {
     </div>
   );
 }
+
+export default SignUp;

@@ -6,7 +6,7 @@
 import { Navigate } from "react-router-dom";
 import { auth } from "@/firebase";
 
-export default function ProtectedRoute({
+function ProtectedRoute({
   children,
 }: {
   children: React.ReactNode,
@@ -22,3 +22,5 @@ export default function ProtectedRoute({
   // 로그인 했다면 <ProtectedRoute> prop으로 받은 children으로 이동
   return children;
 }
+
+export default ProtectedRoute;

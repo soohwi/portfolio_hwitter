@@ -18,7 +18,7 @@ interface ButtonProps {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export const Button: React.FC<ButtonProps> = ({
+const Button: React.FC<ButtonProps> = ({
   value,
   loading = false,
   loadingText = 'Loading...',
@@ -60,3 +60,5 @@ export const Button: React.FC<ButtonProps> = ({
     </div>
   )
 }
+
+export default Button;

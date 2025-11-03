@@ -15,7 +15,7 @@ interface ModalProps {
   footer?: React.ReactNode;
 }
 
-export default function Modal({
+function Modal({
   showModal,
   isAnimation,
   onClose,
@@ -59,3 +59,5 @@ export default function Modal({
     </div>
   );
 }
+
+export default Modal;

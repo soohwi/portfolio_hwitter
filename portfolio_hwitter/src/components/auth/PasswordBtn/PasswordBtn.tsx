@@ -6,12 +6,10 @@
 import { useEffect, useState } from "react";
 import { auth } from "@/firebase";
 import { sendPasswordResetEmail } from "firebase/auth";
-import { Input } from "@/components/common/Input/Input";
-import { Button } from "@/components/common/Button/Button";
-import Modal from "@/components/common/Modal/Modal"
+import { Button, Input, Modal } from "@/components/common";
 import styles from "./PasswordBtn.module.scss";
 
-export default function PasswordBtn() {
+function PasswordBtn() {
   const [showModal, setShowModal] = useState(false);
   const [isAnimation, setIsAnimation] = useState(false);
   const [email, setEmail] = useState("");
@@ -138,3 +136,5 @@ export default function PasswordBtn() {
     </>
   );
 };
+
+export default PasswordBtn;
