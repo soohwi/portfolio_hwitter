@@ -4,9 +4,7 @@
 **/
 
 import { useEffect, useState } from "react";
-import { db } from "@/firebase";
-import { collection, limit, onSnapshot, orderBy, query } from "firebase/firestore";
-import type { Unsubscribe } from "firebase/auth";
+import { subscribeToTweets } from "@/services/tweetService";
 import { Tweet } from "@/components/tweet";
 import type { TweetType } from "@/types/tweet";
 import styles from "./TimeLine.module.scss";
@@ -15,38 +13,10 @@ function TimeLine() {
   const [tweets, setTweets] = useState<TweetType[]>([]);
 
   useEffect(() => {
-    // 유저가 보고있지 않으면 이벤트 리스너를 꺼야함(계속 켜두면 firebase 요금나감)
-    let unsubscribe: Unsubscribe | null = null;
-    const fetchTweets = async () => {
-      const tweetsQuery = query(
-        collection(db, "tweets"),
-        orderBy("createdAt", "desc"),
-        limit(25)// 쿼리 제한(요금절약)
-      );
-
-      unsubscribe = await onSnapshot(tweetsQuery, (snapshot) => {
-        const tweets = snapshot.docs.map((doc) => {
-          const {fileData, tweet, userId, userName, createdAt} = doc.data();
-          return {
-            fileData,
-            tweet,
-            userId,
-            userName,
-            createdAt,
-            id: doc.id,
-          };
-        });
-
-        setTweets(tweets);
-      });
-    }
-
-    fetchTweets();
+    const unsubscribe = subscribeToTweets(setTweets);
 
     // useEffect cleanup 함수
-    return () => {
-      unsubscribe && unsubscribe();
-    }
+    return () => unsubscribe();
   }, []);
 
   return (

@@ -4,8 +4,8 @@
 **/
 
 import { useState } from "react";
-import { auth, db } from "@/firebase";
-import { addDoc, collection } from "firebase/firestore";
+import { auth } from "@/firebase";
+import { createTweet } from "@/services/tweetService";
 import { handleFileChange } from "@/util/util";
 import { Button } from "@/components/common";
 import styles from "./PostTweetForm.module.scss";
@@ -13,7 +13,7 @@ import styles from "./PostTweetForm.module.scss";
 function PostTweetForm() {
   const [loading, setLoading] = useState(false);
   const [tweet, setTweet] = useState("");
-  const [file, setFile] = useState<File | null>(null);
+  const [file, setFile] = useState<string | undefined>(undefined);
 
   const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setTweet(e.target.value);
@@ -34,21 +34,21 @@ function PostTweetForm() {
 
     try {
       setLoading(true);
-      await addDoc(collection(db, "tweets"), {
+      await createTweet({
         tweet,
         createdAt: Date.now(),
         userName: user.displayName || "Anonymous",
         userId: user.uid,
-        fileData: file,
+        ...(file && {fileData: file}),// file이 있을때만 포함
       });
       setTweet("");
-      setFile(null);
+      setFile(undefined);
     } catch(error) {
       console.log(error);
     } finally {
       setLoading(false);
       setTweet("");
-      setFile(null);
+      setFile(undefined);
     }
   }
 
