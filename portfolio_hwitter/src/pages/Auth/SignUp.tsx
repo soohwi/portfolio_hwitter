@@ -39,7 +39,7 @@ function SignUp() {
     e.preventDefault();
     setFormData(prev => ({...prev, error: ""}));
 
-    const {loading, name, email, password} = formData;
+    const {name, email, password} = formData;
 
     try {
       setFormData(prev => ({...prev, loading: true}));

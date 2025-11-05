@@ -6,7 +6,6 @@
 import { db } from "@/firebase";
 import {
   addDoc,
-  getDocs,
   updateDoc,
   deleteDoc,
   where,

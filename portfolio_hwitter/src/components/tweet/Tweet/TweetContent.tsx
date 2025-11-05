@@ -15,7 +15,7 @@ interface TweetContentProps {
   onCancel: () => void;
 }
 
-function TweetContent({tweet, isEditMode, tweetId, onUpdate, onCancel}: TweetContentProps) {
+function TweetContent({tweet, isEditMode, onUpdate, onCancel}: TweetContentProps) {
   const [editTweet, setEditTweet] = useState(tweet);
 
   useEffect(() => {
