@@ -11,42 +11,45 @@
   align-items: center;
   flex-direction: column;
   gap: 2rem;
-}
 
-.profileImgWrap {
-  label {
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 8rem;
-    height: 8rem;
-    border-radius: 100%;
-    background-color: $color_main;
-    cursor: pointer;
+  // 프로필 이미지
+  .profileImgWrap {
+    label {
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 8rem;
+      height: 8rem;
+      border-radius: 100%;
+      background-color: $color_main;
+      cursor: pointer;
 
-    svg {
-      width: 5rem;
+      svg {
+        width: 5rem;
+      }
+    }
+
+    .profileImg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    input {
+      display: none;
     }
   }
 
-  .profileImg {
+  // 유저이름
+  .userName {
+    @include mixin.font($color_white '2.2rem');
+  }
+
+  // 유저 트윗 기록
+  .userHistory {
+    display: grid;
+    gap: .5rem 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
-
-  input {
-    display: none;
-  }
-}
-
-.userName {
-  @include mixin.font($color_white '2.2rem');
-}
-
-.userHistory {
-  display: grid;
-  gap: .5rem 0;
-  width: 100%;
 }

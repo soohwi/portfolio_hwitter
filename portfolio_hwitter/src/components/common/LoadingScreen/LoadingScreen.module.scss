@@ -10,6 +10,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - 4rem);
   @include mixin.font($color_white '2.4rem');
+
+  @include mixin.media(M) {
+    height: calc(100vh - 8rem);
+  }
 }

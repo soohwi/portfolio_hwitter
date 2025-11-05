@@ -28,7 +28,7 @@ const Input: React.FC<InputProps> = ({
   onChange,
 }) => {
   return (
-    <div className={`${styles.input} ${className}`}>
+    <div className={`${styles.inputBox} ${className}`}>
       <input
         type={htmlType}
         name={name}

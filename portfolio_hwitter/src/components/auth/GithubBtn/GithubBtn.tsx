@@ -22,7 +22,7 @@ function GithubButton() {
   }
 
   return (
-    <button type="button" className={styles.button} onClick={signInGithub} aria-label="Github 계정으로 로그인">
+    <button type="button" className={styles.authButton} onClick={signInGithub} aria-label="Github 계정으로 로그인">
       <span className={styles.logo}><img src="/logo_github.svg" alt="Github Logo"/></span>
       <span className={styles.text}>Github로 계속하기</span>
     </button>

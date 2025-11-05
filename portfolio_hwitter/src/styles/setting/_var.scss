@@ -16,26 +16,11 @@ $color_white: #fff;
 $color_black: #1d1d1d;
 $color_main: #36a9d8;
 $color_main_dark: #4285f4;
+$color_negative_base: #ee4f10;
 
 // === 그레이 스케일 ===
-$gray-50: #f7f9fa;
-$gray-100: #f1f3f4;
-$gray-200: #e1e8ed;
 $gray-300: #cfd9de;
-$gray-400: #aab8c2;
 $gray-500: #8899a6;
-$gray-600: #66757f;
-$gray-700: #536471;
-$gray-800: #3c4043;
-$gray-900: #202124;
-
-// // === 의미 색상 ===
-// $success: #00ba7c;
-// $danger: #f4212e;
-// $warning: #ffad1f;
-// $info: $twitter-blue;
-$color_negative_base: #ee4f10;
-// $color_positive_base: $color_tertiary_base;//$color_main;
 
 // === z-index ===
 $zIndex_header: 10;
@@ -48,93 +33,12 @@ $transition-normal: .2s ease;
 $transition-slow: .3s ease;
 $transition-bounce: .3s cubic-bezier(0.34, 1.56, 0.64, 1);
 
-
-// $border_color: rgba($color_white, .2);
-// $color_bg: #f2f3f7;
-
-// $color_variable: var(--color_variable); // 유색 버전은 var(--color_main), 블랙 버전은 var(--color_sub)
-// $color_support: var(--color_support); // 유색 버전은 #ff8800, 블랙 버전은 #4457a7
-
 //> 컬러
 
-//< 최소사이즈
-// $minWidth_base: 1360px;// mobile 320px
-// $minWidth_base: 1520px;
-// $minWidth_extend: $minWidth_base + (106 * 2);// pc 좌/우 날개배너 확장
-//> 최소사이즈
-
-//< 레이아웃
-// 단계: min, base, extend
-
-// header
-// $header_height_base: 8rem;
-// $header_height_sm: var(--header_height_sm);
-// $color_header: var(--color_header);
-
-// footer
-// $footer_height_base: var(--footer_height_base);
-
-// grid
-
-// sidebar
-// $sidebar_content_base: 56px;
-// $sidebar_content_sm: 44px;
-
-// modal
-// $modal_header_height_base: 51px;
-// $modal_width_base: 500px;
-// $modal_width_sm: 412px;
-// $modal_width_lg: 700px;
-// $modal_width_xl: 920px;
-
-// skeleton
-// $skeleton_color_base: #eee;
-
-// bom
-//> 레이아웃
-
-//< 폼
-// 단계: sm, base, lg
-
-// 기본 형태
-
-// $form_borderRadius_base: 3px;
-// $form_color_base: #101010;
-// $form_color_negative: #ff4800;
-// $form_fontSize_base: 1.4rem;
-// $form_fontSize_lg: 15px;
-// $form_clear_base: 44px;
-
-// 텍스트 인풋
-// $form_text_height_base: 46px;
-// $form_text_height_lg: 50px;
-// $form_textarea_lineheight: ($form_fontSize_base + 0.8rem);// 계산식에 사용되어 괄호필요
-
-// 체크박스
-// $form_check_height_base: 20px;
-// $form_check_fontSize_base: 1.4rem;
-
-// 라디오
-// $form_radio_height_base: 20px;
-// $form_radio_fontSize_base: 1.4rem;
-
-// 셀렉트
-// $form_select_height_base: 46px;
-// $form_select_height_sm: 32px;
-// $form_select_fontSize_base: 1.4rem;
-// $form_select_fontSize_sm: 14px;
-
-// 파일
-// $form_file_clear: $form_text_height_base - 6px;
-
-// 이미지
-// $form_image_clear: 22px;
-//> 폼
-
-//< 페이지네이션
-// $pagination_height_base: 25px;
-//> 페이지네이션
-
+//< 사이즈
+$maxWidth_base: 85vw;
+$menu_size: 3rem;
+//> 사이즈
 
 //< ir-blind
 .ir-blind {
@@ -149,49 +53,3 @@ $transition-bounce: .3s cubic-bezier(0.34, 1.56, 0.64, 1);
   border: 0;
 }
 //> ir-blind
-
-
-// // === 텍스트 색상 ===
-// $text-primary: #0f1419;
-// $text-secondary: #536471;
-// $text-tertiary: #8b98a5;
-// $text-disabled: #aab8c2;
-// $text-inverse: $white;
-
-// // === 배경 색상 ===
-// $background-primary: $white;
-// $background-secondary: $gray-50;
-// $background-tertiary: $gray-100;
-
-// // === 테두리 색상 ===
-// $border-light: #eff3f4;
-// $border-normal: #e1e8ed;
-// $border-dark: #cfd9de;
-
-// // === 버튼 관련 ===
-// $btn-border-radius: 50px;
-// $btn-padding: 10px 20px;
-// $focus-outline-color: $twitter-blue;
-
-// // === 그림자 ===
-// $shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-// $shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
-// $shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.15);
-// $shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.3);
-
-// // === 브레이크포인트 ===
-// $breakpoint-sm: 640px;
-// $breakpoint-md: 768px;
-// $breakpoint-lg: 1024px;
-// $breakpoint-xl: 1280px;
-// $breakpoint-2xl: 1536px;
-
-//< 반응형
-// $breakpoints: (
-//   'mobile': 479px,
-//   'tablet': 767px,
-//   'tablet-lg': 1023px,
-//   'desktop': 1279px,
-//   'desktop-lg': 1280px
-// );
-//> 반응형

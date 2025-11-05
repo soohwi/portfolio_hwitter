@@ -6,12 +6,6 @@
 @use '../../../styles/setting/var' as *;
 @use '../../../styles/helper/mixin';
 
-// 버튼그룹
-.btnWrap {
-  display: flex;
-  gap: .4rem;
-}
-
 // 일반 버튼
 .btn {
   padding: 0 2rem;
@@ -26,7 +20,7 @@
     opacity: .7;
   }
 
-  // 버튼타입
+  // 버튼 컬러 종류
   $types: ('primary', $color_main), ('negative', $color_negative_base);
   @each $type, $bg in $types {
     &.#{$type} {

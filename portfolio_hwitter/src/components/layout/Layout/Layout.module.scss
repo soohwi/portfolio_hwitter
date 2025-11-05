@@ -8,28 +8,40 @@
 
 .layout {
   display: grid;
-  grid-template-columns: 3rem 1fr;
+  grid-template-rows: $menu_size 1fr;
   gap: 1.5rem;
-  padding-top: 3rem;
   width: 100%;
-  max-width: 80%;
+  max-width: $maxWidth_base;
+
+  @include mixin.media(M) {
+    grid-template-columns: $menu_size 1fr;
+    grid-template-rows: 1fr;
+  }
 }
 
 .menu {
   display: flex;
-  flex-direction: column;
   gap: .8rem;
+
+  @include mixin.media(M) {
+    flex-direction: column;
+  }
 
   &Item {
     padding: .5rem;
-    width: 3rem;
-    height: 3rem;
+    width: $menu_size;
+    height: $menu_size;
     border: .1rem solid $color_white;
     border-radius: 100%;
     cursor: pointer;
 
-    svg {
-      fill: $color_white;
+    a {
+      width: 100%;
+      height: 100%;
+
+      svg {
+        fill: $color_white;
+      }
     }
 
     &.typeLogout {

@@ -66,29 +66,31 @@ function PostTweetForm() {
         value={tweet}
         onChange={onChange}
       ></textarea>
-      <div className={styles.tweetAddPhoto}>
-        <label
-          htmlFor="file"
-          className={styles.btnAdd}
-        >
-          {file ? "Photo Added ✅" : "Add Photo"}
-        </label>
-        <input
-          type="file"
-          id="file"
-          accept="image/*"
-          onChange={onFileChange}
+      <div className={styles.postBtnGroup}>
+        <div className={styles.tweetAddPhoto}>
+          <label
+            htmlFor="file"
+            className={styles.btnAdd}
+          >
+            {file ? "Photo Added ✅" : "Add Photo"}
+          </label>
+          <input
+            type="file"
+            id="file"
+            accept="image/*"
+            onChange={onFileChange}
+          />
+        </div>
+        <Button
+          htmlType="submit"
+          styleType="primary"
+          size="full"
+          value="Post Tweet"
+          loading={loading}
+          loadingText="Posting..."
+          aria-label="트위터 올리기"
         />
       </div>
-      <Button
-        htmlType="submit"
-        styleType="primary"
-        size="full"
-        value="Post Tweet"
-        loading={loading}
-        loadingText="Posting..."
-        aria-label="트위터 올리기"
-      />
     </form>
   );
 }

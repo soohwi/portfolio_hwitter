@@ -6,7 +6,7 @@
 @use '../../../styles/setting/var' as *;
 @use '../../../styles/helper/mixin';
 
-.button {
+.authButton {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,13 +30,13 @@
     outline: .2rem solid $color_main;
     outline-offset: .2rem;
   }
-}
 
-.logo {
-  width: 2.4rem;
-  height: 2.4rem;
-}
+  .logo {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
 
-.text {
-  margin: .1rem 0 -.1rem;
+  .text {
+    margin: .1rem 0 -.1rem;
+  }
 }
