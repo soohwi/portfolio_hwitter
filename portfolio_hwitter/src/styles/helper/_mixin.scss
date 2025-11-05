@@ -11,55 +11,6 @@
 @use 'sass:string';
 @use './function' as *;
 
-//< 플렉스
-// 	.foo {
-// 		@include flex()
-// 	}
-// @mixin flex-container($direction: row, $wrap: nowrap) {
-
-// 	display: -webkit-box;
-// 	display: -webkit-flex;
-// 	display: flex;
-
-// 	@if $direction == column {
-// 		-webkit-box-orient: vertical;
-// 		@include prefix(flex-direction, $direction, webkit);
-// 	}
-
-// 	@if $wrap == wrap {
-// 		@include prefix(flex-wrap, $wrap, webkit);
-// 	}
-
-// }
-//> 플렉스
-
-//< 미디어 컨텐츠
-// youtube, image 등 가로 사이즈에 맞게 유연한 높이 적용이 필요한 경우
-// 부모 요소에 적용
-// 	.foo {
-// 		@include fluid-media(100%, 0);
-// 	}
-// @mixin fluid-media($padding-top: 56.25%, $padding-bottom: 0) {
-
-// 	overflow: hidden;
-// 	position: relative;
-// 	padding-top: $padding-top;
-// 	padding-bottom: $padding-bottom;
-// 	width: 100%;
-// 	height: 0;
-// 	@include font('0/1');
-
-// 	> * {
-// 		position: absolute;
-// 		top: 0;
-// 		right: 0;
-// 		bottom: 0;
-// 		left: 0;
-// 	}
-
-// }
-//> 미디어 컨텐츠
-
 //< clearfix
 //	.foo {
 //		@include clearfix();
@@ -147,23 +98,6 @@
 }
 //> prefix
 
-//< browser hack
-// @mixin hack($browser) {
-
-// 	@if $browser == edge {
-// 		@at-root #{'_:-ms-lang(x)::backdrop, '} #{&} {
-// 			@content;
-// 		}
-// 	}
-// 	// @else if $browser == ie11 {
-// 	// 	@at-root #{'_:-ms-lang(x)::-ms-backdrop, '} #{&} {
-// 	// 		@content;
-// 	// 	}
-// 	// }
-
-// }
-//> browser hack
-
 //< transform + backface-visibility
 @mixin transform($value, $origin: null, $visibility: visible) {
 
@@ -185,16 +119,6 @@
 
 }
 //> transition
-
-//< gradient
-// @mixin linear-gradient($defaultColor, $angle, $colors...) {
-
-// 	background-color: $defaultColor;
-// 	background-image: -webkit-linear-gradient($angle, $colors);
-// 	background-image: linear-gradient($angle, $colors);
-
-// }
-//> gradient
 
 //< 백그라운드 속성 분할
 // color: transparent color # rgb rgba hsl hsla
@@ -260,201 +184,6 @@
 
 }
 //> 백그라운드 속성 분할
-
-//< svg 이미지
-// color: transparent color # rgb rgba hsl hsla
-// url: none url()
-// position: center left top right bottom >> 50% 50% 변경 / length
-// size: length % auto contain cover
-// repeat: repeat repeat-x repeat-y no-repeat space round
-// clip: content-box padding-box border-box margin-box fill-box stroke-box view-box no-clip
-// origin: content-box padding-box border-box margin-box fill-box stroke-box view-box
-// 	.foo {
-// 		@include mixin.svg(color url 'position/size' repeat clip origin);
-// 	}
-// @mixin svg($values: null) {
-
-// 	$isClip: false;
-// 	@each $value in $values {
-// 		@if meta.type-of($value) == color {
-// 			// @debug 'background-color:' $value;
-// 			background-color: $value;
-// 		}
-// 		@else if meta.type-of($value) == string and string.index($value, 'var') {
-// 			// css 변수
-// 			// @debug 'background-color:' $value;
-// 			background-color: $value;
-// 		}
-// 		@else if string.index($value, 'url') or string.index($value, 'none') {
-// 			// @debug 'mask-image:' $value;
-// 			mask-image: $value;
-// 			-webkit-mask-image: $value;
-// 		}
-// 		@else if string.index($value, 'repeat') or list.index(space round, $value) {
-// 			// @debug 'mask-repeat:' $value;
-// 			mask-repeat: $value;
-// 			-webkit-mask-repeat: $value;
-// 		}
-// 		@else if string.index($value, 'box') or list.index(no-clip, $value) {
-// 			@if not $isClip {
-// 				// @debug 'mask-clip:' $value;
-// 				mask-clip: $value;
-// 				-webkit-mask-clip: $value;
-// 				$isClip: true;
-// 			}
-// 			@else {
-// 				// @debug 'mask-origin:' $value;
-// 				mask-origin: $value;
-// 				-webkit-mask-origin: $value;
-// 			}
-// 		}
-// 		@else if string.index(meta.inspect($value), '"') == 1 {
-// 			$numbers: string.split(string.unquote($value), '/');
-// 			@for $i from 1 through list.length($numbers) {
-// 				$number: list.nth($numbers, $i);
-// 				@if ($number != '') {
-// 					@if $i == 1 {
-// 						// @debug 'mask-position:' $number;
-// 						mask-position: $number;
-// 						-webkit-mask-position: $number;
-// 					}
-// 					@else {
-// 						// @debug 'mask-size:' $number;
-// 						mask-size: $number;
-// 						-webkit-mask-size: $number;
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-
-// }
-//> svg 이미지
-
-//< 대체텍스트
-//	.foo {
-//		@include text-ir(blind);
-//	}
-// @mixin text-ir($type: blind) {
-
-// 	overflow: hidden;
-// 	pointer-events: none;
-
-// 	@if $type == blind {
-// 		position: absolute;
-// 		z-index: -1;
-// 		width: 1px;
-// 		height: 1px;
-// 		clip-path: circle(0%);
-// 	} @else if $type == size {
-// 		position: absolute;
-// 		top: 0;
-// 		left: 0;
-// 		width: 0;
-// 		height: 0;
-// 		@include font('0/1');
-// 	} @else if $type == indent {
-// 		// 적용 시 display: block 또는 inline-block 적용 필요
-// 		@include font('0/1');
-// 		text-indent: -99999px;
-// 	} @else if $type == wa {
-// 		position: relative;
-// 		z-index: -1;
-// 	}
-
-// }
-//> 대체텍스트
-
-//< 텍스트 말줄임
-// @mixin text-ellipsis($line: 1, $replace: ellipsis) {
-
-// 	@if $line > 0 {
-// 		overflow: hidden;
-// 		text-overflow: $replace;
-
-// 		@if $line < 2 {
-// 			line-height: 1.4;
-// 			white-space: nowrap;
-
-// 			// #{escape('.S=ios')} & {
-// 			// 	display: -webkit-box;
-// 			// 	white-space: normal;
-// 			// 	-webkit-box-orient: vertical;
-// 			// 	-webkit-line-clamp: $line;
-// 			// }
-
-// 			br {
-// 				display: none;
-// 			}
-// 		} @else {
-// 			display: -webkit-box;
-// 			-webkit-box-orient: vertical;
-// 			-webkit-line-clamp: $line;
-// 		}
-// 	} @else {
-// 		display: block;
-// 		overflow: visible;
-// 		text-overflow: clip;
-// 		white-space: normal;
-// 		-webkit-line-clamp: 0;
-
-// 		br {
-// 			display: inline;
-// 		}
-// 	}
-
-// }
-//> 텍스트 말줄임
-
-//< 웹폰트
-//	.foo {
-//		@include font-face('fontname', font/filename);
-//		@include font-face('fontname', font/filename, bold, eot woff2 woff);
-//		@include font-face('fontname', font/filename, normal, eot woff2 woff ttf svg);
-//		@include font-face('fontname', font/filename, normal, eot woff2 woff otf svg, italic);
-//	}
-// @mixin font-face($name, $path, $weight: 400, $exts: woff2 woff, $style: normal) {
-
-// 	// $path를 list 타입으로 적용하면 2번째 값을 파일명 뒤에 버전(.woff2?version=값)으로 추가(monticon 처럼 폰트파일이 변경될 때 사용)
-
-// 	$src: null;
-// 	$src-eot: null;
-
-// 	$extmods: (
-// 		eot: '#iefix',
-// 		svg: '#' + string.replace($name, ' ', '_')
-// 	);
-
-// 	$formats: (
-// 		eot: 'embedded-opentype',
-// 		otf: 'opentype',
-// 		ttf: 'truetype'
-// 	);
-
-// 	@each $ext in $exts {
-// 		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
-// 		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
-// 		$url: if(type-of($path) == list, list.nth($path, 1) + '.' + $extmod + '?version=' + list.nth($path, 2), $path + '.' + $extmod);
-// 		$src: string.append($src, url(quote($url)) format(quote($format)), comma);
-// 		@if $ext == eot {
-// 			$src-eot: url(quote($path + '.' + $ext));
-// 		}
-// 	}
-
-// 	@font-face {
-// 		// font-variation-settings: 'wght' $weight;
-// 		font-weight: $weight;
-// 		font-style: $style;
-// 		font-family: quote($name);
-// 		font-display: swap;
-// 		@if $src-eot {
-// 			src: $src-eot;// IE9 호환성보기
-// 		}
-// 		src: $src;
-// 	}
-
-// }
-//> 웹폰트
 
 //< 폰트 속성 분할
 // font-variant 속성 제외
@@ -534,50 +263,6 @@
 }
 //> 폰트 속성 분할
 
-//< border triangle
-//	.foo {
-//		@include triangle(var.$color_black, left, 3px, 6px);
-//	}
-// @mixin triangle($color, $direction, $size-width, $size-height: $size-width) {
-
-// 	width: 0;
-// 	height: 0;
-// 	@include font('0/1');
-// 	border: $size-width solid transparent;
-
-// 	@if $direction == bottom {
-// 		border-top: $size-height solid $color;
-// 		border-bottom: 0;
-// 	} @else if $direction == top {
-// 		border-top: 0;
-// 		border-bottom: $size-height solid $color;
-// 	} @else if $direction == left {
-// 		border-right: $size-height solid $color;
-// 		border-left: 0;
-// 	} @else if $direction == right {
-// 		border-right: 0;
-// 		border-left: $size-height solid $color;
-// 	} @else if $direction == top-left {
-// 		border-top: $size-height solid $color;
-// 		border-bottom: 0;
-// 		border-left: 0;
-// 	} @else if $direction == top-right {
-// 		border-top: $size-height solid $color;
-// 		border-bottom: 0;
-// 		border-right: 0;
-// 	} @else if $direction == bottom-left {
-// 		border-top: 0;
-// 		border-bottom: $size-height solid $color;
-// 		border-left: 0;
-// 	} @else if $direction == bottom-right {
-// 		border-top: 0;
-// 		border-bottom: $size-height solid $color;
-// 		border-right: 0;
-// 	}
-
-// }
-//> border triangle
-
 //< opacity IE8
 // png 이미지에만 적용됨 (background-color는 반투명 png이미지로 적용)
 //	.foo {
@@ -601,19 +286,6 @@
 
 }
 //> opacity IE8
-
-//< 모션 키프레임
-// @mixin keyframes($name) {
-
-// 	@-webkit-keyframes #{$name} {
-// 		@content;
-// 	}
-// 	@keyframes #{$name} {
-// 		@content;
-// 	}
-
-// }
-//> 모션 키프레임
 
 //< 미디어쿼리
 //	.foo {
@@ -644,37 +316,6 @@
 }
 //> 미디어쿼리
 
-//< 요소 그룹화
-// $selector에 &, >, + 등 사용 가능 (작성하지 않으면 기본 공백으로 적용)
-//	.foo {
-//		@include mixin.is('.class, div', '>') {
-//			b {
-//				width: 50%;
-//			}
-// 		}
-//	}
-// @mixin is($context, $selector: ' ') {
-
-// 	#{$selector}:is(#{$context}),
-// 	#{$selector}:-webkit-any(#{$context}) {
-// 		@content;
-// 	}
-
-// }
-//> 요소 그룹화
-
-//< 셀렉터 변경
-// $replace-context에 띄어쓰기 사용 시 > 또는 + 필수
-// @mixin context-replace($target-context, $replace-context) {
-
-// 	@at-root #{selector-replace(&, $target-context, $replace-context)} {
-// 		// @debug 'replace:' $target-context $replace-context &;
-// 		@content;
-// 	}
-
-// }
-//> 셀렉터 변경
-
 //< 셀렉터 순서 정리(div.class::before 순으로 정리)
 @mixin context-unify($context) {
 
@@ -688,54 +329,3 @@
 
 }
 //> 셀렉터 순서 정리(div.class::before 순으로 정리)
-
-//< 첫 번째 요소에 앞에 셀렉터 추가(.add.context)
-// @mixin context-first($context) {
-
-// 	@at-root #{selector-append($context, &)} {
-// 		// @debug 'first:' $context &;
-// 		@content;
-// 	}
-
-// }
-//> 첫 번째 요소에 앞에 셀렉터 추가(.add.context)
-
-//< 선택한 요소 앞에 셀렉터 추가(.add.context, .add > .context)
-// $add-context에 띄어쓰기 사용 시 > 또는 + 필수
-// @mixin context-before($add-context, $target-context: null) {
-
-// 	$selectors: ();
-// 	@each $selector in & {
-// 		$context: if($target-context, $target-context, string.slice(meta.inspect($selector), str-last-index(meta.inspect($selector), ' ') + 1, string.length(meta.inspect($selector))));
-// 		$selectors: string.append($selectors, selector-replace($selector, $context, $add-context + $context), comma);
-// 		// @debug $context;
-// 	}
-// 	// @debug $selectors;
-
-// 	@at-root #{$selectors} {
-// 		// @debug 'before:' $add-context $target-context &;
-// 		@content;
-// 	}
-
-// }
-//> 선택한 요소 앞에 셀렉터 추가(.add.context, .add > .context)
-
-//< 선택한 요소 뒤에 셀렉터 추가(.context.add, .context > .add)
-// $add-context에 띄어쓰기 사용 시 > 또는 + 필수
-// @mixin context-after($add-context, $target-context: null) {
-
-// 	$selectors: ();
-// 	@each $selector in & {
-// 		$context: if($target-context, $target-context, string.slice(meta.inspect($selector), str-last-index(meta.inspect($selector), ' ') + 1, string.length(meta.inspect($selector))));
-// 		$selectors: string.append($selectors, selector-replace($selector, $context, $context + $add-context), comma);
-// 		// @debug $context;
-// 	}
-// 	// @debug $selectors;
-
-// 	@at-root #{$selectors} {
-// 		// @debug 'after:' $add-context $target-context &;
-// 		@content;
-// 	}
-
-// }
-//> 선택한 요소 뒤에 셀렉터 추가(.context.add, .context > .add)
