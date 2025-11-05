@@ -32,6 +32,10 @@
   &.full {
     margin-top: .5rem;
     width: 100%;
+
+    @include mixin.media(XL) {
+      margin-top: 0;
+    }
   }
 
   &.sm {
