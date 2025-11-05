@@ -37,7 +37,7 @@ function TweetContent({tweet, isEditMode, tweetId, onUpdate, onCancel}: TweetCon
 
   return (
     <form onSubmit={onEditSubmit}>
-      <label htmlFor="tweetContent" className="ir-blind">트윗 내용</label>
+      <label htmlFor="tweetContent" className="sr-only">트윗 내용</label>
       <textarea
         id="tweetContent"
         name="tweetContent"

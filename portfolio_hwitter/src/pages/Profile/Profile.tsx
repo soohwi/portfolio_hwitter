@@ -52,6 +52,7 @@ function Profile() {
 
   return (
     <div className={styles.profile}>
+      <h1 className="sr-only">프로필</h1>
       <div className={styles.profileImgWrap}>
         <label htmlFor="avatar" aria-label="프로필 이미지 변경">
           {avatar ? (

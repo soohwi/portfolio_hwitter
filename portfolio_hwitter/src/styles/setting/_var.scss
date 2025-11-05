@@ -40,8 +40,8 @@ $maxWidth_base: 85vw;
 $menu_size: 3rem;
 //> 사이즈
 
-//< ir-blind
-.ir-blind {
+//< sr-only
+.sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -52,4 +52,4 @@ $menu_size: 3rem;
   white-space: nowrap;
   border: 0;
 }
-//> ir-blind
+//> sr-only
